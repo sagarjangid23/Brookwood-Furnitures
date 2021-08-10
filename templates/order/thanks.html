@@ -1,0 +1,23 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+  Thanks - Brookwood Furniture Store
+{% endblock %}
+{% block content %}
+  <div class="">
+    <div class="text-center">
+      <br>
+      <br>
+      <h1 class="text-center my_title">Thanks for Placing your order</h1>
+      <br>
+      <br>
+      <p>Your Order is:<b>{{customer_order.id}}</b></p>
+      <br>
+      <p>
+        We Have received your order and will begin processing right away.
+      </p>
+    </div>
+  </div>
+  <br>
+  <br>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block metadescription %}{% endblock %}" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class='container'>
+      <div class="container-fluid bg-info navbar-fixed-top my_top_navbar_div">
+        {% include 'shop/topnavbar.html' %}
+      </div>
+      {% include 'shop/header.html' %}
+      {% include 'shop/navbar.html' %}
+      {% block content %}
+      {% endblock %}
+    </div>
+      {% include 'shop/footer.html' %}
+      <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>

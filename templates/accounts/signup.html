@@ -1,0 +1,45 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Create a New Account- Furniture Store
+{% endblock title %}
+
+{% block content %}
+<div class="">
+  {% if not form.is_valid %}
+  <div class="mx-auto">
+    <br>
+    <h1 class="my_title text-center">Create a new account</h1>
+    <br>
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 mx-auto bg-secondary">
+      <br>
+      <p>Enter the folling Information to create a new account</p>
+      <form method="post">
+        {% csrf_token %}
+        <p>{{form | crispy }}</p>
+        <button type="submit" name="button" class="btn btn-primary">Register New Account</button>
+      </form>
+      <br>
+    </div>
+  </div>
+  {% else %}
+  <div class="mx-auto">
+    <br>
+    <h1>Your Account has been successfully created</h1>
+    <br>
+    <div class="">
+        <p>
+          Dear Customer,
+          <br>
+          <br>
+          Your account has been created and it is ready to use.
+          <a href="{% url 'shop:allProdCat' %}">Continue Shopping</a>
+        </p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<br>
+{% endblock content %}
